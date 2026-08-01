@@ -50,6 +50,7 @@ jobs:
           TF_VAR_backend_secret_key: ${{ secrets.SECRET_KEY }}
           TF_VAR_netlify_api_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           TF_VAR_netlify_site_name: ${{ secrets.NETLIFY_SITE_NAME }}
+          TF_VAR_netlify_team_slug: ${{ secrets.NETLIFY_TEAM_SLUG }}
 
       - name: 🚀 Terraform Apply
         run: terraform apply -auto-approve tfplan
@@ -63,3 +64,4 @@ jobs:
           TF_VAR_backend_secret_key: ${{ secrets.SECRET_KEY }}
           TF_VAR_netlify_api_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           TF_VAR_netlify_site_name: ${{ secrets.NETLIFY_SITE_NAME }}
+          TF_VAR_netlify_team_slug: ${{ secrets.NETLIFY_TEAM_SLUG }}

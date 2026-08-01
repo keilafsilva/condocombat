@@ -4,28 +4,28 @@ variable "dockerhub_username" {
 }
 
 variable "supabase_access_token" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "supabase_db_password" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "render_api_key" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "render_owner_id" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "backend_secret_key" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "netlify_api_token" {
@@ -38,4 +38,10 @@ variable "netlify_site_name" {
   type        = string
   description = "Nome do site da Landing Page na Netlify"
   default     = "condocombat-landing"
+}
+
+variable "netlify_team_slug" {
+  type        = string
+  description = "Slug do time/conta na Netlify"
+  default     = "keilafsilva"
 }
