@@ -1,5 +1,5 @@
 # =============================================================================
-# Stage 1: Dependencies — instala node_modules - teste
+# Stage 1: Dependencies — instala node_modules
 # =============================================================================
 FROM node:20-alpine AS deps
 

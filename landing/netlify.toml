@@ -1,4 +1,4 @@
-# trigger cd pipeline
+# trigger 
 [build]
   command = "npm run build"
   publish = "dist"
