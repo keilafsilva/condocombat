@@ -1,5 +1,5 @@
 # =============================================================================
-# Stage 1: Dependencies — instala dependências
+# Stage 1: Dependencies — instala dependências 
 # =============================================================================
 FROM python:3.12-slim AS deps
 
