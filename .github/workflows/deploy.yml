@@ -50,6 +50,7 @@ jobs:
           TF_VAR_render_owner_id: ${{ secrets.RENDER_OWNER_ID }}
           TF_VAR_backend_secret_key: ${{ secrets.BACKEND_SECRET_KEY }}
           TF_VAR_netlify_api_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          TF_VAR_netlify_team_id: ${{ secrets.NETLIFY_TEAM_ID }}
           TF_VAR_netlify_site_id: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: 🚀 Terraform Apply
@@ -64,4 +65,5 @@ jobs:
           TF_VAR_render_owner_id: ${{ secrets.RENDER_OWNER_ID }}
           TF_VAR_backend_secret_key: ${{ secrets.BACKEND_SECRET_KEY }}
           TF_VAR_netlify_api_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          TF_VAR_netlify_team_id: ${{ secrets.NETLIFY_TEAM_ID }}
           TF_VAR_netlify_site_id: ${{ secrets.NETLIFY_SITE_ID }}
