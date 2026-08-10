@@ -45,4 +45,5 @@ exclude = ["alembic*"]
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
-
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.Path", "fastapi.Body"]
