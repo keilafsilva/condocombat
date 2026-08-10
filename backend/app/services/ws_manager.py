@@ -4,9 +4,10 @@ import logging
 import time
 from dataclasses import dataclass, field
 
-from app.schemas.ws_message import EventType, WSMessage
 from fastapi import WebSocket
 from starlette.websockets import WebSocketDisconnect
+
+from app.schemas.ws_message import EventType, WSMessage
 
 logger = logging.getLogger(__name__)
 
