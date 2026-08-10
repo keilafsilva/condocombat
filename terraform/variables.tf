@@ -35,13 +35,7 @@ variable "netlify_api_token" {
   description = "Token de Acesso Pessoal da Netlify"
 }
 
-variable "netlify_site_name" {
+variable "netlify_site_id" {
   type        = string
-  description = "Nome do site da Landing Page na Netlify"
-  default     = "condocombat-landing"
-}
-
-variable "netlify_team_slug" {
-  type        = string
-  description = "Slug da equipe da Netlify usada para resolver o site e variáveis de ambiente"
+  description = "ID do site da Landing Page na Netlify"
 }

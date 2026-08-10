@@ -49,8 +49,7 @@ jobs:
           TF_VAR_render_owner_id: ${{ secrets.RENDER_OWNER_ID }}
           TF_VAR_backend_secret_key: ${{ secrets.BACKEND_SECRET_KEY }}
           TF_VAR_netlify_api_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          TF_VAR_netlify_site_name: ${{ secrets.NETLIFY_SITE_NAME }}
-          TF_VAR_netlify_team_slug: ${{ secrets.NETLIFY_TEAM_SLUG }}
+          TF_VAR_netlify_site_id: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: 🚀 Terraform Apply
         run: terraform apply -auto-approve tfplan
@@ -63,5 +62,4 @@ jobs:
           TF_VAR_render_owner_id: ${{ secrets.RENDER_OWNER_ID }}
           TF_VAR_backend_secret_key: ${{ secrets.BACKEND_SECRET_KEY }}
           TF_VAR_netlify_api_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          TF_VAR_netlify_site_name: ${{ secrets.NETLIFY_SITE_NAME }}
-          TF_VAR_netlify_team_slug: ${{ secrets.NETLIFY_TEAM_SLUG }}
+          TF_VAR_netlify_site_id: ${{ secrets.NETLIFY_SITE_ID }}
