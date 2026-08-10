@@ -9,6 +9,11 @@ variable "supabase_access_token" {
   sensitive   = true
 }
 
+variable "supabase_organization_id" {
+  type        = string
+  description = "ID ou slug da organização Supabase usada para criar o projeto"
+}
+
 variable "supabase_db_password" {
   type        = string
   sensitive   = true
