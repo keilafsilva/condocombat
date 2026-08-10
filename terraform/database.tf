@@ -4,4 +4,9 @@ resource "supabase_project" "db" {
   name              = "condocombat-db"
   database_password = var.supabase_db_password
   region            = "us-east-1"
+  instance_size     = "micro"
+
+  timeouts {
+    create = "30m"
+  }
 }
