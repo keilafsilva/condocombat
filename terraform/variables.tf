@@ -40,6 +40,11 @@ variable "netlify_api_token" {
   description = "Token de Acesso Pessoal da Netlify"
 }
 
+variable "netlify_team_id" {
+  type        = string
+  description = "ID da equipe da Netlify usada para criar variáveis de ambiente"
+}
+
 variable "netlify_site_id" {
   type        = string
   description = "ID do site da Landing Page na Netlify"
