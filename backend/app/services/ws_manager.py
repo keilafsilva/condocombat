@@ -1,5 +1,5 @@
 """WebSocket connection manager with broadcast and heartbeat."""
-
+from starlette.websockets import WebSocketDisconnect
 import asyncio
 import logging
 import time
@@ -74,10 +74,10 @@ class WSConnectionManager:
         payload = message.model_dump(mode="json")
         disconnected: list[WebSocket] = []
         for ws in self._connections:
-            try:
-                await ws.send_json(payload)
-            except Exception:
-                disconnected.append(ws)
+                   try:
+            await websocket.send_json(payload)
+        except (WebSocketDisconnect, RuntimeError, ConnectionResetError):
+            self.disconnect(websocket)
         for ws in disconnected:
             self.disconnect(ws)
 
@@ -86,11 +86,10 @@ class WSConnectionManager:
     ) -> None:
         """Envia mensagem para uma conexão específica."""
         payload = message.model_dump(mode="json")
-        try:
+       try:
             await websocket.send_json(payload)
-        except Exception:
+        except (WebSocketDisconnect, RuntimeError, ConnectionResetError):
             self.disconnect(websocket)
-
     async def _heartbeat_loop(self, websocket: WebSocket) -> None:
         """Envia ping periódico e desconecta se não receber PONG."""
         try:
@@ -103,10 +102,10 @@ class WSConnectionManager:
 
                 before = info.last_pong
 
-                ping = WSMessage(type=EventType.PING)
+               ping = WSMessage(type=EventType.PING)
                 try:
                     await websocket.send_json(ping.model_dump(mode="json"))
-                except Exception:
+                except (WebSocketDisconnect, RuntimeError, ConnectionResetError):
                     self.disconnect(websocket)
                     break
 
