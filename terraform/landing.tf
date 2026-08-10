@@ -10,7 +10,7 @@ resource "netlify_environment_variable" "landing_public_url" {
   key     = "PUBLIC_APP_URL"
   values = [
     {
-      value   = render_service.frontend.url
+      value   = render_web_service.frontend.url
       context = "all"
     }
   ]
@@ -20,7 +20,7 @@ resource "netlify_environment_variable" "landing_public_url" {
 resource "terraform_data" "landing_deploy" {
   triggers_replace = [
     data.netlify_site.landing.id,
-    render_service.frontend.url
+    render_web_service.frontend.url
   ]
 
   provisioner "local-exec" {

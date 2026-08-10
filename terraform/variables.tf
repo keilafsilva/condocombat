@@ -40,3 +40,8 @@ variable "netlify_site_name" {
   description = "Nome do site da Landing Page na Netlify"
   default     = "condocombat-landing"
 }
+
+variable "netlify_team_slug" {
+  type        = string
+  description = "Slug da equipe da Netlify usada para resolver o site e variáveis de ambiente"
+}
