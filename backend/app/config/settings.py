@@ -1,4 +1,3 @@
-import os
 from urllib.parse import quote_plus, urlparse
 
 from pydantic import field_validator, model_validator
